@@ -25,16 +25,16 @@ userApp.get('/users/:id', UserResource.getUserById);
 userApp.post('/users', UserResource.createUser);
 
 
-userApp.get('/quiz', QuizResource.getAllQuiz);
-userApp.get('/quiz/:id', QuizResource.getQuizById);
-userApp.post('/quiz', QuizResource.createQuiz);
+userApp.get('/quizzes', QuizResource.getAllQuiz);
+userApp.get('/quizzes/:id', QuizResource.getQuizById);
+userApp.post('/quizzes', QuizResource.createQuiz);
 
 userApp.get('/quizsession', QuizSessionResource.getAllQuizSession);
 userApp.get('/quizsession/:id', QuizSessionResource.getQuizSessionById);
 userApp.post('/quizsession', QuizSessionResource.createQuizSession);
-userApp.put('/quizsession/:id/status', QuizSessionResource.updateQuizSessionStatus);
-userApp.post('/quizsession/:id/member', QuizSessionResource.addQuizSessionMember);
-userApp.post('/quizsession/:id/member/:memberId', QuizSessionResource.addQuizSessionMemberScrore);
+userApp.put('/quizsessions/:id/status', QuizSessionResource.updateQuizSessionStatus);
+userApp.post('/quizsessions/:id/members', QuizSessionResource.addQuizSessionMember);
+userApp.post('/quizsessions/:id/score', QuizSessionResource.addQuizSessionMemberScrore);
 
     
 exports.userapp = functions.region('europe-west3').https.onRequest(main);

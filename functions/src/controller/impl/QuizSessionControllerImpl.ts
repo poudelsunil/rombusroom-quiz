@@ -108,7 +108,7 @@ export default class QuizSessionControllerImpl implements QuizSessionController 
 
         const fieldsToUpdate: any = this.prepareQuizSessionToUpdate(request);
         this.quizSessionRepository.update(request.id || "", fieldsToUpdate);
-        return { id: request.id, status: request.id };
+        return { id: request.id, status: request.status };
     }
 
     prepareQuizSessionToUpdate(request: UpdateQuizSessionStatusControllerRequest): any {
@@ -120,6 +120,10 @@ export default class QuizSessionControllerImpl implements QuizSessionController 
 
         if (!request || !request.id || Utils.isEmpty(request.id)) {
             throw new ValidationError("Id is missing");
+        }
+
+        if (!request || !request.status || Utils.isEmpty(request.status)) {
+            throw new ValidationError("Status is missing");
         }
 
         const quizSessionEntity: QuizSessionEntity = await this.validateAndGetQuizSession(request.id);
@@ -174,7 +178,7 @@ export default class QuizSessionControllerImpl implements QuizSessionController 
     async addMemberScore(request: AddQuizSessionMemberScoreControllerRequest)
     : Promise<AddQuizSessionMemberScoreControllerResponse>{
 
-        const quizSessionEntity: QuizSessionEntity = 
+        // const quizSessionEntity: QuizSessionEntity = 
         await this.validateAddQuizSessionMemberScoreControllerRequest(request);
 
         // TODO

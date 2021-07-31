@@ -115,7 +115,6 @@ export async function addQuizSessionMemberScrore(req : any, res : any) {
     const request: AddQuizSessionMemberScoreControllerRequest 
      = addQuizSessionMemberScoreAdaptor.toServiceObject(req.body);
     request.id = req.params.id;
-    request.memberId = req.params.memberId;
 
     console.log("AddQuizSessionMemberScoreControllerRequest : " + JSON.stringify(request));
 

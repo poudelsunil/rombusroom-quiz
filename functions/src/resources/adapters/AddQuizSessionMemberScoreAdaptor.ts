@@ -6,6 +6,8 @@ export default class AddQuizSessionMemberScoreAdaptor implements RequestAdaptor<
     toServiceObject(jsonObject: any):AddQuizSessionMemberScoreControllerRequest {
         const request: AddQuizSessionMemberScoreControllerRequest = new AddQuizSessionMemberScoreControllerRequest();
 
+        request.memberId = jsonObject.memberId;
+        // request.score = jsonObject.score;
         // TODO
         
         return request;
