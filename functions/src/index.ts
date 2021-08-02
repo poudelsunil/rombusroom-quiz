@@ -29,6 +29,10 @@ userApp.get('/quizzes', QuizResource.getAllQuiz);
 userApp.get('/quizzes/:id', QuizResource.getQuizById);
 userApp.post('/quizzes', QuizResource.createQuiz);
 
+userApp.get('/quizzes/:quizId/questions', QuizResource.getAllQuizQuestions);
+userApp.get('/quizzes/:quizId/questions/:id', QuizResource.getQuizQuestionById);
+userApp.post('/quizzes/:quizId/questions', QuizResource.createQuizQuestion);
+
 userApp.get('/quizsession', QuizSessionResource.getAllQuizSession);
 userApp.get('/quizsession/:id', QuizSessionResource.getQuizSessionById);
 userApp.post('/quizsession', QuizSessionResource.createQuizSession);

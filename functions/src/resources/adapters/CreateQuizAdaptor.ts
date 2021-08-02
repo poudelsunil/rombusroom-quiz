@@ -7,8 +7,8 @@ export default class CreateQuizAdaptor implements RequestAdaptor<CreateQuizContr
         const request: CreateQuizControllerRequest = new CreateQuizControllerRequest();
 
         request.name  = jsonObject.name;
-
-        // TODO
+        request.description  = jsonObject.description;
+        request.createdBy  = jsonObject.createdBy;
         
         return request;
     }

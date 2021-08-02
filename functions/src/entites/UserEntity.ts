@@ -1,4 +1,4 @@
-export default class QuizEntity {
+export default class UserEntity {
 
     id: string;
     name: string;
